@@ -34,6 +34,8 @@ bash run.sh
 
 The server listens at **http://127.0.0.1:8080**. Press `Ctrl+C` to stop it.
 
+You can also double-click the **Strata** desktop icon. It starts Coder, waits for the server, and opens Chrome at the UI address. Keep its terminal open while using Strata; press `Ctrl+C` there to stop. If Strata is already running, the icon opens the existing server.
+
 For a custom data drive, start directly from the installed application:
 
 ```bash

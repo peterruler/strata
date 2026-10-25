@@ -55,7 +55,7 @@ cd "$STRATA_APP"
   --yes \
   --family coder \
   --model IQ1_M \
-  --context 32768 \
+  --context 65536 \
   --vision no \
   --experimental-speed-projection off \
   --data-dir "$STRATA_MODELS" \

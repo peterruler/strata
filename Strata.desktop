@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Strata
+Comment=Start Strata and open its UI in Chrome
+Exec=bash /data/Projects/strata/desktop-launch.sh
+Path=/data/Projects/strata
+Icon=/data/Projects/strata/strata-icon.svg
+Terminal=true
+Categories=Development;
+StartupNotify=false

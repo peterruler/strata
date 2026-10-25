@@ -3,6 +3,7 @@ set -euo pipefail
 
 URL=http://127.0.0.1:8080/
 APP=/data/ai/Strata-DGX-Spark
+LAUNCHER=${STRATA_LAUNCHER:-$APP/run-coder-iq1_m.sh}
 server_pid=
 
 fail() {
@@ -23,9 +24,9 @@ done
 ready() { curl --fail --silent --max-time 2 "${URL}health" >/dev/null; }
 
 if ! ready; then
-  [[ -x "$APP/run-coder-iq1_m.sh" ]] || fail 'Install Strata first with bash install-strata.sh.'
+  [[ -f "$LAUNCHER" ]] || fail 'Install Strata first with bash install-strata.sh.'
   cd "$APP"
-  ./run-coder-iq1_m.sh &
+  bash "$LAUNCHER" &
   server_pid=$!
   trap 'kill "$server_pid" 2>/dev/null || true' EXIT
   trap 'exit 130' INT TERM

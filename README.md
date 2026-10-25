@@ -45,6 +45,22 @@ cd /mnt/data/ai/Strata-DGX-Spark
 
 ## Check the server
 
+### Use a 65,536-token window
+
+Stop Strata with `Ctrl+C` in its terminal, then double-click **Strata 64K** on the desktop or run:
+
+```bash
+bash run-64k.sh
+```
+
+This adds a Coder configuration with `--max-context 65536`, reusing the installed weights without downloading another model. Its API name is `qwen3.8-flash-next-coder-iq1_m-64k`. It uses more memory than the 32,768-token configuration; the window includes both input and output tokens. Only one configuration can use port 8080 at a time. Start a new chat after switching.
+
+The original **Strata** shortcut and `run.sh` keep the 32K configuration. The desktop shortcuts open an existing server if one is running, so stop it first to switch windows.
+
+For a fresh installation with 64K as the default, change `--context 32768` to `--context 65536` in `install-strata.sh` before running it.
+
+### Health and models
+
 ```bash
 bash test.sh
 ```

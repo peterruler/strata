@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Strata 64K
+Comment=Start Strata Coder with a 65536-token context and open Chrome
+Exec=env STRATA_LAUNCHER=/data/Projects/strata/run-64k.sh bash /data/Projects/strata/desktop-launch.sh
+Path=/data/Projects/strata
+Icon=/data/Projects/strata/strata-icon.svg
+Terminal=true
+Categories=Development;
+StartupNotify=false
